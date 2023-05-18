@@ -17,9 +17,6 @@ public class EmailServiceImpl implements EmailService {
     boolean isMailEnabled;
 
     public void sendEmail(String to, String subject, String text) {
-        if(!isMailEnabled){
-            return;
-        }
         SimpleMailMessage message = new SimpleMailMessage();
         message.setTo(to);
         message.setSubject(subject);
@@ -27,13 +24,20 @@ public class EmailServiceImpl implements EmailService {
         mailSender.send(message);
     }
     public void debitMail(String toMail,String amount){
+        if(!isMailEnabled){
+            return;
+        }
         String text = "Your money has been debited. Rs:"+amount;
-        log.info("Debit mail has been sent");
+        log.info("Debit mail is being sent");
         sendEmail(toMail,"Debited",text);
         log.info("Debit mail has been sent");
     }
     public void creditMail(String toMail,String amount){
+        if(!isMailEnabled){
+            return;
+        }
         String text = "Your money has been credit. Rs:"+amount;
+        log.info("Credit mail is being sent");
         sendEmail(toMail,"credited",text);
         log.info("Credit mail has been sent");
     }

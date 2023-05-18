@@ -8,7 +8,7 @@ import org.springframework.data.annotation.Id;
 @Setter
 public class UserDataModel {
     @Id
-    public String userEmail;
-    public String accountNumber;
-    public Integer balance;
+    private String userEmail;
+    private String accountNumber;
+    private Integer balance;
 }

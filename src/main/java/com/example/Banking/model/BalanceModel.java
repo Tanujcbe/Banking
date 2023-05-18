@@ -10,10 +10,10 @@ import java.util.Date;
 @Setter
 public class BalanceModel {
     @Id
-    String id;
-    Integer balance;
-    String accountId;
-    String currency;
-    String type;
-    Date date;
+    private String id;
+    private Integer balance;
+    private String accountId;
+    private String currency;
+    private String type;
+    private Date date;
 }

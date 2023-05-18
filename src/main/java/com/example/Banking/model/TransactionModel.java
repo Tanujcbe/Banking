@@ -11,9 +11,9 @@ import java.util.Date;
 public class TransactionModel {
     @Id
     private String id;
-    String yourAccount;
-    String targetAccount;
-    Integer amount;
-    String currencyCode;
+    private String yourAccount;
+    private String targetAccount;
+    private Integer amount;
+    private String currencyCode;
     private Date date;
 }

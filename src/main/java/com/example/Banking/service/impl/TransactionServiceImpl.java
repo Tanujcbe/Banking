@@ -99,7 +99,7 @@ public class TransactionServiceImpl implements TransactionService {
         List<TransactionModel> transactionList = transactionRepo.findByYourAccountAndDateBetween(accountId, startDate, endDate);
         Integer totalAmount = 0;
         for(TransactionModel transaction :transactionList ){
-            totalAmount=totalAmount+Integer.valueOf(transaction.getAmount());
+            totalAmount=totalAmount+ transaction.getAmount();
         }
         return transferAmount<=(Constants.dailyTransferAmountLimit - totalAmount);
     }

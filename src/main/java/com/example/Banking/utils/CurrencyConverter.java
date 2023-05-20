@@ -16,7 +16,8 @@ public class CurrencyConverter {
     }
 
     public static Integer convertCurrency(Integer amount, String currencyCode) {
-        if(currencyCode.equals("INR")){
+
+        if(currencyCode==null || currencyCode.equals("INR")){
             return amount;
         }
         else if(currencyCode.equals("USD")){
